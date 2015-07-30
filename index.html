@@ -1,0 +1,244 @@
+<!doctype html>
+
+<html>
+  <head>
+    <title>H&M Management</title>
+    <meta name="viewport" content="width=device-width">
+
+    <!-- jQuery 2.1.3 -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+
+    <!-- jQuery scrollTo Plugin -->
+    <script src="https://cdn.jsdelivr.net/jquery.scrollto/2.1.0/jquery.scrollTo.min.js"></script>
+
+    <!-- Google Maps API -->
+    <script src="http://maps.google.com/maps/api/js?sensor=false" type="text/javascript"></script>
+
+    <!-- Parallax Image Scrolling -->
+    <script src="js/parallax.js"></script>
+
+    <!-- Custom JavaScript -->
+    <script src="js/script.js"></script>
+
+    <!-- Font Awesome CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
+    <!-- CSS Reset -->
+    <link rel="stylesheet" href="css/reset.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/index.css">
+
+  </head>
+
+  <body>
+
+    <section class="nav">
+      <div class="nav__container">
+        <div class="nav__logo"><a href="index.html"><img src="img/logo__hmmgmt--beta.png"></a></div>
+        <div class="menu__container">
+          <a class="menu__item--dropdown">Our Properties <i class="fa fa-caret-down"></i>
+            <div class="menu__dropdown">
+              <ul>
+                <li>Brittain Park</li>
+                <li>Crest Apartments</li>
+                <li>Elayne Apartments</li>
+                <li>Falls Landing</li>
+                <li>Grand Woodlands</li>
+                <li>Kentworth Village</li>
+                <li>North Isle</li>
+                <li>Riverside House</li>
+              </ul>
+            </div>
+          </a>
+          <a class="menu__item--normal" href="index.html#anchor__about">About Us</a>
+          <button class="menu__item--button">Apply Online</button>
+        </div>
+      </div>
+    </section>
+
+  	<section class="intro parallax-window" data-parallax="scroll" data-image-src="img/test__bedroom-1.jpg" data-speed="0.8">
+  		<div class="intro__container">
+  			<h1 class="intro__tagline">Our mission is to provide the best <br>value in the apartment industry.<br>
+          <span class="intro__subtext">Offering quality housing at affordable prices.</span>
+        </h1>
+  			<button class="intro__button">View H&M Properties</button>
+        <p class="intro__contact"><i class="fa fa-phone"></i> Contact: 1-440-886-0123</p>
+        <p class="intro__contact"><i class="fa fa-envelope-o"></i> Email: hmmanagement@cox.net</p>
+  		</div>
+  	</section>
+
+    <section class="cities">
+      <div class="cities__container">
+        <h1 class="cities__block"><i class="fa fa-map-marker"></i> Locations:</h1>
+        <span class="cities__block">Willoughby</span><i class="fa fa-circle"></i>
+        <span class="cities__block">North Olmstead</span><i class="fa fa-circle"></i>
+        <span class="cities__block">Parma Heights</span><i class="fa fa-circle"></i>
+        <span class="cities__block">Middleburg Heights</span><i class="fa fa-circle"></i>
+        <span class="cities__block">Northfield</span><i class="fa fa-circle"></i>
+        <span class="cities__block">Cuyahoga Falls</span><i class="fa fa-circle"></i>
+        <span class="cities__block">Akron</span><i class="fa fa-circle"></i>
+        <span class="cities__block">Tallmadge</span>
+      </div>
+    </section>
+
+  	<section id="map">
+  	</section>
+
+    <script>
+
+    var locations = [
+      ['Riverside House', 41.637614, -81.404860, 1],
+      ['Kentworth Village', 41.430676, -81.882967, 2],
+      ['Elayne Apartments', 41.393503, -81.768572, 3],
+      ['Crest Apartments', 41.372940, -81.851101, 4],
+      ['North Isle Apartments', 41.341552, -81.525158, 5],
+      ['Falls Landing', 41.136706, -81.481608, 6],
+      ['Brittain Park Apartments', 41.105323, -81.468408, 7],
+      ['Grand Woodlands', 41.093131, -81.425540, 8]
+    ];
+
+    var map = new google.maps.Map(document.getElementById('map'), {
+      zoom: 9,
+      disableDefaultUI: true,
+      scrollwheel: false,
+      navigationControl: false,
+      mapTypeControl: false,
+      scaleControl: false,
+      draggable: false,
+      center: new google.maps.LatLng(41.417066, -81.612376),
+      mapTypeId: google.maps.MapTypeId.ROADMAP,
+      styles: [{"featureType":"administrative","elementType":"all","stylers":[{"visibility":"on"},{"saturation":-100},{"lightness":20}]},{"featureType":"landscape.man_made","elementType":"all","stylers":[{"visibility":"simplified"},{"saturation":-60},{"lightness":10}]},{"featureType":"landscape.natural","elementType":"all","stylers":[{"visibility":"simplified"},{"saturation":-60},{"lightness":60}]},{"featureType":"poi","elementType":"all","stylers":[{"visibility":"off"},{"saturation":-100},{"lightness":60}]},{"featureType":"road","elementType":"all","stylers":[{"visibility":"on"},{"saturation":-100},{"lightness":40}]},{"featureType":"transit","elementType":"all","stylers":[{"visibility":"off"},{"saturation":-100},{"lightness":60}]},{"featureType":"water","elementType":"all","stylers":[{"visibility":"on"},{"saturation":-10},{"lightness":30}]}]
+    });
+
+
+    var contentString = '<div id="content">'+'</div>';
+
+    var grnMarker = 'img/map__marker--green.png';
+
+    var infowindow = new google.maps.InfoWindow();
+
+    var marker, i;
+
+    for (i = 0; i < locations.length; i++) {
+      marker = new google.maps.Marker({
+        position: new google.maps.LatLng(locations[i][1], locations[i][2]),
+        icon: grnMarker,
+        map: map
+      });
+
+      google.maps.event.addListener(marker, 'mouseover', (function(marker, i) {
+        return function() {
+          infowindow.setContent(locations[i][0]);
+          infowindow.open(map, marker);
+        }
+      })(marker, i));
+    }
+    </script>
+
+  	<section class="properties">
+      <div class="properties__container">
+        <h1 class="properties__header">Find a great neighborhood.</h1>
+        <ul class="properties__list">
+          <li>
+            <img class="property__image" src="img/thumbnail__riverside-house.jpg">
+              <h3 class="property__location"><a href="riverside-house.html">Willoughby, OH</a></h3>
+          </li>
+          <li>
+            <img class="property__image" src="img/thumbnail__kentworth-village.jpg">
+              <h3 class="property__location">North Olmstead, OH</h3>
+          </li>
+          <li>
+            <img class="property__image" src="img/thumbnail__elayne.jpg">
+              <h3 class="property__location">Parma Heights, OH</h3>
+          </li>
+          <li>
+            <img class="property__image" src="img/thumbnail__crest.jpg">
+              <h3 class="property__location">Middleburg Heights, OH</h3>
+          </li>
+          <li>
+            <img class="property__image" src="img/thumbnail__north-isle.jpg">
+              <h3 class="property__location">Northfield, OH</h3>
+          </li>
+          <li>
+            <img class="property__image" src="img/thumbnail__falls-landing.jpg">
+              <h3 class="property__location">Cuyahoga Falls, OH</h3>
+          </li>  
+          <li>
+            <img class="property__image" src="img/thumbnail__brittain-park.jpg">
+              <h3 class="property__location">Akron, OH</h3>
+          </li>   
+          <li>
+            <img class="property__image" src="img/thumbnail__grand-woodlands.jpg">
+              <h3 class="property__location">Tallmadge, OH</h3>
+          </li> 
+          <div class="clear"></div>                 
+        </ul>
+      </div>
+  	</section>
+    <section class="about">
+      <a id="anchor__about"></a>
+      <div class="about__container">
+        <h1 class="about__header">Learn about our mission.</h1>
+        <div class="about__block--left">
+          <h2 class="about__intro"><span>H&M Management</span> has been operating apartment communities and consulting in the real estate industry since 1975.</h2>
+          <h2 class="about__intro">
+          It is our mission to provide the best value in the apartment industry, offering quality housing at affordable pricing.
+          </h2>
+        </div>
+        <div class="about__block--right">
+          <p class="about__paragraph">A private family owned business, the managing partner is Martin Cohen. Mr. Cohen is a lifetime trustee of the Northeast Ohio Apartment Association, served as President in 1996. Mr. Cohen's career includes earning a master degree in finance, formerly a professor at Case Western Reserve University (1977-1983), officer at Ameritrust (1977-1979), been a consultant to Broadview Savings and Loan Co. (1982-1986), and currently a Board of Director to Third Federal Savings and Loan.
+          </p>
+          <p class="about__paragraph">The company prides itself with stability, with its low tenant turnover and long term employees. H&M Management treats its staff members as family and preaches to treat each other as they would want to be treated, with respect!
+          </p>
+        </div>
+        <div class="clear"></div>
+      </div>
+    </section>
+
+    <section class="logos">
+      <div class="logos__container">
+        <h2 class="logos__title">Find us on the web</h2>
+        <a href="http://www.rent.com/" target="_blank"><img class="logos__image" src="img/logo__rent.jpg"></a>
+        <a href="http://www.forrent.com/" target="_blank"><img class="logos__image" src="img/logo__apartmentguide.jpg"></a>
+        <a href="http://www.apartmentguide.com/" target="_blank"><img class="logos__image" src="img/logo__forrent.jpg"></a>
+      </div>
+    </section>
+
+    <section class="footer">
+      <div class="footer__container">
+        <div class="footer__contact">
+          <h1>Contact:</h1>
+          <p>Phone: 440 886-0123</p>
+          <p>Fax: 440 886-0345</p>
+          <p>Email: HMManagement@cox.net</p>
+        </div>
+        <ul class="footer__locations">
+          <h1>Properties:</h1>
+          <div class="left">
+            <li>Akron</li> 
+            <li>Cuyahoga Falls</li>      
+            <li>Willoughby</li>
+            <li>Middleburg Heights</li>
+          </div>
+          <div class="right">
+            <li>Northfield</li>
+            <li>North Olmstead</li>
+            <li>Parma Heights</li>
+            <li>Tallmadge</li>
+        </ul>
+        <div class="footer__office">
+          <h1>Office Location:</h1>
+          <p>H&M Management Compnay<br>
+          6267 Stumph Road, Suite 1A<br>
+          Parma Heights, OH 44130</p>
+        </div>
+        <div class="clear"></div>
+        <p class="footer__copyright"><i class="fa fa-copyright"></i> H&M Management Company 2015</p>
+      </div>
+      <div class="clear"></div>
+    </section>
+
+  </body>
+</html>
