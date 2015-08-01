@@ -38,7 +38,7 @@
 
   <body>
 
-  	<section class="nav">
+    <section class="nav">
       <div class="nav__container">
         <div class="nav__logo"><a href="index.html"><img src="img/logo__hmmgmt.png"></a></div>
         <div class="menu__container">
@@ -101,8 +101,8 @@
 
     <section class="property">
       <div class="property__container">
-        <h2 class="property__header">Riverside House</h2>
-        <a class="property__address"><i class="fa fa-map-marker"></i> 4285 River Street, Willoughby OH 44094</a>
+        <h2 class="property__header">Falls Landing</h2>
+        <a class="property__address"><i class="fa fa-map-marker"></i> 1657 Munroe Falls Ave, Cuyahoga Falls, OH 44221</a>
     <!--<p class="property__address">4285 River Street, Willoughby OH 44094 <a class="property__map"><i class="fa fa-map-marker"></i>Map</a></p>-->
       </div>
     </section>
@@ -175,7 +175,7 @@
     <script>
 
     var locations = [
-      ['Riverside House', 41.637614, -81.404860, 1],
+      ['Falls Landing', 41.140362, -81.459256, 6],
     ];
 
     var map = new google.maps.Map(document.getElementById('map'), {
@@ -186,7 +186,7 @@
       mapTypeControl: false,
       scaleControl: false,
       draggable: false,
-      center: new google.maps.LatLng(41.637614, -81.404860),
+      center: new google.maps.LatLng(41.140362, -81.459256),
       mapTypeId: google.maps.MapTypeId.ROADMAP,
       styles: [{"featureType":"administrative","elementType":"all","stylers":[{"visibility":"on"},{"saturation":-100},{"lightness":20}]},{"featureType":"landscape.man_made","elementType":"all","stylers":[{"visibility":"simplified"},{"saturation":-60},{"lightness":10}]},{"featureType":"landscape.natural","elementType":"all","stylers":[{"visibility":"simplified"},{"saturation":-60},{"lightness":60}]},{"featureType":"poi","elementType":"all","stylers":[{"visibility":"off"},{"saturation":-100},{"lightness":60}]},{"featureType":"road","elementType":"all","stylers":[{"visibility":"on"},{"saturation":-100},{"lightness":40}]},{"featureType":"transit","elementType":"all","stylers":[{"visibility":"off"},{"saturation":-100},{"lightness":60}]},{"featureType":"water","elementType":"all","stylers":[{"visibility":"on"},{"saturation":-10},{"lightness":30}]}]
     });

@@ -97,9 +97,6 @@ a {
   margin-top: 35px;
   border-radius: 5px;
   padding: 7px 0px;
-  -webkit-box-shadow: 0px 1px 4px 0px rgba(201,201,201,1);
-  -moz-box-shadow: 0px 1px 4px 0px rgba(201,201,201,1);
-  box-shadow: 0px 1px 4px 0px rgba(201,201,201,1);
 }
 .menu__dropdown li {
   text-align: left;
@@ -112,7 +109,7 @@ a {
   color: #FFF;
 }
 .menu__dropdown li a {
-  color: #DDD;
+  color: #EEE;
 }
 .menu__dropdown:after, .menu__dropdown:before {
   bottom: 100%;
@@ -126,8 +123,8 @@ a {
 }
 .menu__dropdown:after {
   border-bottom-color: #333;
-  border-width: 10px;
-  margin-left: -10px;
+  border-width: 9px;
+  margin-left: -9px;
 }
 
 /* Footer Section */
