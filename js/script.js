@@ -1,11 +1,13 @@
 jQuery("document").ready(function($){
 
 	// Our Properties Dropdown Menu
-    $('.menu__item--dropdown').hover(function(){
-        $('.menu__dropdown').fadeIn(200)
-    },function(){
-        $('.menu__dropdown').fadeOut(200)
-    })
+    $('.menu__item--dropdown').mouseover(function () {
+        $('.menu__dropdown').fadeIn('fast');
+    });
+
+    $('.menu__dropdown').mouseleave(function () {
+        $('.menu__dropdown').fadeOut('fast');
+    });
 
     // Autoscroll to Home Page map.
     $('.intro__button').click(function() {
