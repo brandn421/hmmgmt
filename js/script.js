@@ -11,7 +11,7 @@ jQuery("document").ready(function($){
 
     // Autoscroll to Home Page map.
     $('.intro__button').click(function() {
-   		$.scrollTo($('.cities').position().top - 220, 750);
+   		$.scrollTo($('.cities').position().top - 220, 600);
 	});
 
 	// Autoscroll to Property Page map.

@@ -4,6 +4,9 @@
   <head>
     <title>H&M Management</title>
     <meta name="viewport" content="width=device-width">
+    
+    <!-- Google Search Console Verificaiton -->
+    <meta name="google-site-verification" content="fCz_y3Ifc-BkVRHyxdWkdbr1_7r6XWtSCN-5bNiCwEQ" />
 
     <!-- jQuery 2.1.3 -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
@@ -34,21 +37,21 @@
 
   <body>
 
-    <section class="nav">
+    <nav class="nav">
       <div class="nav__container">
         <div class="nav__logo"><a href="index.html"><img src="img/logo__hmmgmt.png"></a></div>
         <div class="menu__container">
           <span class="menu__item--dropdown">Our Properties <i class="fa fa-caret-down"></i>
             <div class="menu__dropdown">
               <ul>
-                <li><a href="brittain-park.html">Brittain Park</a></li>
-                <li><a href="crest-apartments.html">Crest Apartments</a></li>
-                <li><a href="elayne-apartments.html">Elayne Apartments</a></li>
-                <li><a href="falls-landing.html">Falls Landing</a></li>
-                <li><a href="grand-woodlands.html">Grand Woodlands</a></li>
-                <li><a href="kentworth-village.html">Kentworth Village</a></li>
-                <li><a href="north-isle.html">North Isle</a></li>
-                <li><a href="riverside-house.html">Riverside House</a></li>
+                <a href="brittain-park.html"><li>Brittain Park</li></a>
+                <a href="crest-apartments.html"><li>Crest Apartments</li></a>
+                <a href="elayne-apartments.html"><li>Elayne Apartments</li></a>
+                <a href="falls-landing.html"><li>Falls Landing</li></a>
+                <a href="grand-woodlands.html"><li>Grand Woodlands</li></a>
+                <a href="kentworth-village.html"><li>Kentworth Village</li></a>
+                <a href="north-isle.html"><li>North Isle</li></a>
+                <a href="riverside-house.html"><li>Riverside House</li></a>
               </ul>
             </div>
           </span>
@@ -56,9 +59,11 @@
           <button class="menu__item--button">Apply Online</button>
         </div>
       </div>
-    </section>
-
-  	<section class="intro parallax-window" data-parallax="scroll" data-image-src="img/test__bedroom-1.jpg" data-speed="0.8">
+    </nav>
+    
+    <!-- Remove image until we get a good one :) -->
+  	<!--<section class="intro parallax-window" data-parallax="scroll" data-image-src="img/test__landing-page.jpg" data-speed="0.8">-->
+    <section class="intro">
   		<div class="intro__container">
   			<h1 class="intro__tagline">Our mission is to provide the best <br>value in the apartment industry.<br>
           <span class="intro__subtext">Offering quality housing at affordable prices.</span>
@@ -139,36 +144,36 @@
         <h1 class="properties__header">Find a great neighborhood.</h1>
         <ul class="properties__list">
           <li>
+            <div class="property__location">Willoughby</div>
             <img class="property__image" src="img/thumbnail__riverside-house.jpg">
-              <h3 class="property__location"><a href="riverside-house.html">Willoughby, OH</a></h3>
           </li>
           <li>
             <img class="property__image" src="img/thumbnail__kentworth-village.jpg">
-              <h3 class="property__location">North Olmstead, OH</h3>
+            <div class="property__location">North Olmstead</div>
           </li>
           <li>
             <img class="property__image" src="img/thumbnail__elayne.jpg">
-              <h3 class="property__location">Parma Heights, OH</h3>
+            <div class="property__location">Parma Heights</div>
           </li>
           <li>
             <img class="property__image" src="img/thumbnail__crest.jpg">
-              <h3 class="property__location">Middleburg Heights, OH</h3>
+            <div class="property__location">Middleburg Heights</div>
           </li>
           <li>
             <img class="property__image" src="img/thumbnail__north-isle.jpg">
-              <h3 class="property__location">Northfield, OH</h3>
+            <div class="property__location">Northfield</div>
           </li>
           <li>
             <img class="property__image" src="img/thumbnail__falls-landing.jpg">
-              <h3 class="property__location">Cuyahoga Falls, OH</h3>
+            <div class="property__location">Cuyahoga Falls</div>
           </li>  
           <li>
             <img class="property__image" src="img/thumbnail__brittain-park.jpg">
-              <h3 class="property__location">Akron, OH</h3>
+            <div class="property__location">Akron</div>
           </li>   
           <li>
             <img class="property__image" src="img/thumbnail__grand-woodlands.jpg">
-              <h3 class="property__location">Tallmadge, OH</h3>
+            <div class="property__location">Tallmadge</div>
           </li> 
           <div class="clear"></div>                 
         </ul>

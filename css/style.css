@@ -108,8 +108,8 @@ a {
   background-color: #327FCC;
   color: #FFF;
 }
-.menu__dropdown li a {
-  color: #EEE;
+.menu__dropdown a {
+  color: #CCC;
 }
 .menu__dropdown:after, .menu__dropdown:before {
   bottom: 100%;
