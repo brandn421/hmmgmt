@@ -9,15 +9,14 @@ jQuery("document").ready(function($){
         $('.menu__dropdown').fadeOut('fast');
     });
 
-    // Autoscroll to Home Page map.
+    // Autoscroll to Home Page Map
     $('.intro__button').click(function() {
    		$.scrollTo($('.cities').position().top - 220, 600);
 	});
 
-	// Autoscroll to Property Page map.
+	// Autoscroll to Property Page Map
     $('.property__address').click(function() {
    		$.scrollTo($('#map').position().top - 75, 750);
 	});
 
- 
 });

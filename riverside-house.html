@@ -30,9 +30,13 @@
     <!-- CSS Reset -->
     <link rel="stylesheet" href="css/reset.css">
 
-    <!-- Proerpty Page CSS -->
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/property.css">
+    <!-- Global Styles -->
+    <link rel="stylesheet" href="css/global-sm.css">
+    <link rel="stylesheet" href="css/global-lg.css">
+
+    <!-- Page Styles -->
+    <link rel="stylesheet" href="css/property-sm.css">
+    <link rel="stylesheet" href="css/property-lg.css">
 
   </head>
 
@@ -100,10 +104,15 @@
     -->
 
     <section class="property">
-      <div class="property__container">
-        <h2 class="property__header">Riverside House</h2>
-        <a class="property__address"><i class="fa fa-map-marker"></i> 4285 River Street, Willoughby OH 44094</a>
-    <!--<p class="property__address">4285 River Street, Willoughby OH 44094 <a class="property__map"><i class="fa fa-map-marker"></i>Map</a></p>-->
+      <div class="property__container" itemscope itemprop="location" itemtype="http://schema.org/Place">
+        <h2 class="property__header" itemprop="name">Riverside House</h2>
+        <a class="property__address" itemscope itemprop="address" itemtype="http://schema.org/PostalAddress">
+          <i class="fa fa-map-marker"></i> 
+          <span itemprop="streetAddress">4285 River Street</span>,
+          <span itemprop="addressLocality">Willoughby</span>,
+          <span itemprop="addressRegion">OH</span>
+          <span itemprop="postalCode">44094</span>
+        </a>
       </div>
     </section>
 
@@ -142,7 +151,7 @@
           <div class="details__block-content">
             <div class="details__amenities">
               <p><i class="fa fa-car"></i> Parking: <span>Conatct for details</span></p>
-              <p><i class="fa fa-cog"></i></i> Heating: <span>Free</span></p>
+              <p><i class="fa fa-cog"></i> Heating: <span>Free</span></p>
               <p><i class="fa fa-building"></i> Community: <span>66 units</span></p>
               <p><i class="fa fa-user"></i> Management: <span>On-site</span></p>
               <p><i class="fa fa-wrench"></i> Maintenace: <span>24-hours</span></p>
@@ -156,12 +165,12 @@
           <h2 class="details__block-label">Photos</h2>
           <div class="details__block-content">
             <div class="details__photos">
-              <a class="venobox" data-gall="riverside-house" title="Riverside House: Kitchen" href="img/test__placeholder.jpg"><img src="img/test__placeholder.jpg" alt="image alt"/></a>
-              <a class="venobox" data-gall="riverside-house" title="Riverside House: Kitchen" href="img/test__placeholder.jpg"><img src="img/test__placeholder.jpg" alt="image alt"/></a>
-              <a class="venobox" data-gall="riverside-house" title="Riverside House: Living Room" href="img/test__placeholder.jpg"><img src="img/test__placeholder.jpg" alt="image alt"/></a>
-              <a class="venobox" data-gall="riverside-house" title="Riverside House: Bathroom" href="img/test__placeholder.jpg"><img src="img/test__placeholder.jpg" alt="image alt"/></a>
-              <a class="venobox" data-gall="riverside-house" title="Riverside House: Bathroom" href="img/test__placeholder.jpg"><img src="img/test__placeholder.jpg" alt="image alt"/></a>
-              <a class="venobox" data-gall="riverside-house" title="Riverside House: Bedroom" href="img/test__placeholder.jpg"><img src="img/test__placeholder.jpg" alt="image alt"/></a>
+              <a class="venobox" data-gall="riverside-house" title="Riverside House: Kitchen" href="img/test__placeholder.jpg"><img src="img/test__placeholder.jpg" itemprop="image"/></a>
+              <a class="venobox" data-gall="riverside-house" title="Riverside House: Kitchen" href="img/test__placeholder.jpg"><img src="img/test__placeholder.jpg" itemprop="image"/></a>
+              <a class="venobox" data-gall="riverside-house" title="Riverside House: Living Room" href="img/test__placeholder.jpg"><img src="img/test__placeholder.jpg" itemprop="image"/></a>
+              <a class="venobox" data-gall="riverside-house" title="Riverside House: Bathroom" href="img/test__placeholder.jpg"><img src="img/test__placeholder.jpg" itemprop="image"/></a>
+              <a class="venobox" data-gall="riverside-house" title="Riverside House: Bathroom" href="img/test__placeholder.jpg"><img src="img/test__placeholder.jpg" itemprop="image"/></a>
+              <a class="venobox" data-gall="riverside-house" title="Riverside House: Bedroom" href="img/test__placeholder.jpg"><img src="img/test__placeholder.jpg" itemprop="image"/></a>
             </div>
           </div>
         </div>
